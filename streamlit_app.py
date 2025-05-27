@@ -5,8 +5,8 @@ import io
 
 st.title("📦 Remplissage automatique de fiche BOX")
 
-# Upload des fichiers
-uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xlsb")
+# ✅ Uploader maintenant accepte les fichiers .xls au lieu de .xlsb
+uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xls")
 uploaded_template = st.file_uploader("📄 Uploadez la fiche BOX vierge (template Excel)", type="xlsx")
 
 # Entrée du code produit
@@ -14,10 +14,10 @@ code_produit = st.text_input("🔍 Entrez le code produit à filtrer")
 
 if uploaded_source and uploaded_template and code_produit:
     try:
-        # Lire toutes les lignes temporairement sans en-têtes
+        # Lire temporairement toutes les lignes sans en-têtes
         temp_df = pd.read_excel(uploaded_source, header=None)
 
-        # Chercher la ligne qui contient les vraies colonnes (ex: "Product code")
+        # Identifier la ligne contenant les en-têtes (ex: "Product code")
         row_index = None
         for i, row in temp_df.iterrows():
             if "Product code" in row.values:
@@ -77,7 +77,7 @@ if uploaded_source and uploaded_template and code_produit:
                                 valeur = ""
                     ws[cellule] = valeur
 
-            # Sauvegarde dans un buffer
+            # Sauvegarde dans un buffer pour téléchargement
             output = io.BytesIO()
             wb.save(output)
             st.success("✅ Fiche remplie avec succès !")
@@ -86,4 +86,3 @@ if uploaded_source and uploaded_template and code_produit:
 
     except Exception as e:
         st.error(f"💥 Une erreur s'est produite : {e}")
-
