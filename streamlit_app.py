@@ -9,7 +9,7 @@ st.title("📦 Remplissage automatique de fiche BOX")
 # ✅ Uploader maintenant accepte les fichiers .xls au lieu de .xlsb
 uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xls")
 # Upload des fichiers.
-uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xlsb")
+#uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xlsb")
 uploaded_template = st.file_uploader("📄 Uploadez la fiche BOX vierge (template Excel)", type="xlsx")
 
 # Entrée du code produit
