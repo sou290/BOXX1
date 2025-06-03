@@ -1,5 +1,8 @@
 streamlit
 pandas
 openpyxl
+<<<<<<< HEAD
 pyxlsb
 xlrd>=2.0.1
+=======
+>>>>>>> a5d6813 (Mise à jour du script Streamlit et requirements)
