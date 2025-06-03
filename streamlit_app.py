@@ -8,7 +8,6 @@ st.title("📦 Remplissage automatique de fiche BOX")
 
 # ✅ Uploader maintenant accepte les fichiers .xls au lieu de .xlsb
 uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xls")
-=======
 # Upload des fichiers.
 uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xlsb")
 uploaded_template = st.file_uploader("📄 Uploadez la fiche BOX vierge (template Excel)", type="xlsx")
@@ -23,7 +22,7 @@ if uploaded_source and uploaded_template and code_produit:
         temp_df = pd.read_excel(uploaded_source, header=None)
 
         # Identifier la ligne contenant les en-têtes (ex: "Product code")
-=======
+
         # Lire toutes les lignes temporairement sans en-têtes
         temp_df = pd.read_excel(uploaded_source, header=None)
 
