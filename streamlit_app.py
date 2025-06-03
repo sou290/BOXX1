@@ -47,7 +47,7 @@ if uploaded_source and uploaded_template and code_produit:
                 'Product code': 'E5',
                 'Supplier Reference': 'E6',
                 'Supplier Name': 'E7',
-                'Date of creation': 'E3',
+                
                 'Origin': 'C9',
                 'Brand name': 'C10',
                 'Product short description': 'G6',
@@ -59,7 +59,7 @@ if uploaded_source and uploaded_template and code_produit:
                 'Master Weight  kg ': 'D19',
                 'Palett Weight  kg ': 'H19',
                 'Level / palet': 'E24',
-                'Carton Unit / Palet': 'E23'
+                'CTN / level': 'E23'
             }
 
             convertir_en_mm = ['D17', 'D18', 'H16', 'D16']
