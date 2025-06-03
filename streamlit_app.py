@@ -11,7 +11,6 @@ uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Ex
 =======
 # Upload des fichiers.
 uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xlsb")
->>>>>>> a5d6813 (Mise à jour du script Streamlit et requirements)
 uploaded_template = st.file_uploader("📄 Uploadez la fiche BOX vierge (template Excel)", type="xlsx")
 
 # Entrée du code produit
@@ -19,7 +18,7 @@ code_produit = st.text_input("🔍 Entrez le code produit à filtrer")
 
 if uploaded_source and uploaded_template and code_produit:
     try:
-<<<<<<< HEAD
+
         # Lire temporairement toutes les lignes sans en-têtes
         temp_df = pd.read_excel(uploaded_source, header=None)
 
@@ -29,7 +28,7 @@ if uploaded_source and uploaded_template and code_produit:
         temp_df = pd.read_excel(uploaded_source, header=None)
 
         # Chercher la ligne qui contient les vraies colonnes (ex: "Product code")
->>>>>>> a5d6813 (Mise à jour du script Streamlit et requirements)
+
         row_index = None
         for i, row in temp_df.iterrows():
             if "Product code" in row.values:
@@ -59,10 +58,6 @@ if uploaded_source and uploaded_template and code_produit:
                 'Product code': 'E5',
                 'Supplier Reference': 'E6',
                 'Supplier Name': 'E7',
-<<<<<<< HEAD
-                
-=======
->>>>>>> a5d6813 (Mise à jour du script Streamlit et requirements)
                 'Origin': 'C9',
                 'Brand name': 'C10',
                 'Product short description': 'G6',
@@ -91,12 +86,6 @@ if uploaded_source and uploaded_template and code_produit:
                             except:
                                 valeur = ""
                     ws[cellule] = valeur
-
-<<<<<<< HEAD
-            # Sauvegarde dans un buffer pour téléchargement
-=======
-            # Sauvegarde dans un buffer
->>>>>>> a5d6813 (Mise à jour du script Streamlit et requirements)
             output = io.BytesIO()
             wb.save(output)
             st.success("✅ Fiche remplie avec succès !")
