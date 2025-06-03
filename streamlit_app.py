@@ -5,7 +5,7 @@ import io
 
 st.title("📦 Remplissage automatique de fiche BOX")
 
-<<<<<<< HEAD
+
 # ✅ Uploader maintenant accepte les fichiers .xls au lieu de .xlsb
 uploaded_source = st.file_uploader("🗂️ Uploadez le fichier d'extraction (Excel)", type="xls")
 =======
